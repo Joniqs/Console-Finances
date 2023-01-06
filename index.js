@@ -87,8 +87,13 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-var totalValue = 0;
 
-console.log("Financial Analysis \n");
-console.log('----------------------------');
-console.log("Total Months: ", finances.length);
+var totalMonths = finances.length;
+var total = finances.reduce((sum, arr) => sum + arr[1], 0);
+var average = total / totalMonths;
+var sortedData = finances.sort((a, b) => b[1] - a[1]);
+var smallest = sortedData[sortedData.length - 1];
+var greatest = sortedData[0];
+
+
+
