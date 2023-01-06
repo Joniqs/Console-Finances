@@ -87,19 +87,35 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-
+//Length of our array is equal to months in our data set
 var totalMonths = finances.length;
+// Variable that holds the sum of our array, 
+// I used reduce method that goes through every element and adds it to our sum variable in a new array. 
+// We start summing from [0] element which is our first element.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 var total = finances.reduce((sum, arr) => sum + arr[1], 0);
+// Variable that holds the average of our array,
+// Total variable is holding the sum of our array and we divide that by totalMonths.
 var average = total / totalMonths;
+// Variable that holds our sorted Data, it sorts it from greatest to smallest.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 var sortedData = finances.sort((a, b) => b[1] - a[1]);
+// Variable that holds our smallest value in our data set,
+// I printed that out and realized if we subtract that by -1 we
+// We will get the last element of our array which is our Greatest Decrese in profits.
 var smallest = sortedData[sortedData.length - 1];
+// First element of our sorted array is our Greatest Increase in profits.
 var greatest = sortedData[0];
 
+// Printing our report into console.
 console.log("Financial Analysis \n");
 console.log('----------------------------');
 console.log("Total Months: ", totalMonths);
 console.log("Total: " + `$` + total);
+//The toFixed() method rounds the string to a specified number of decimals, in our case it's by 2.
 console.log("Average Change: " + `$` + average.toFixed(2));
+// Smallest array is holding 2 values, month and our greatest decrease.
 console.log("Greatest Decrease in Profits: " + smallest[0] + ` ($` + smallest[1] + `)`);
+// Greatest array is holding 2 values, month and our greatest increase.
 console.log("Greatest Increase in Profits: " + greatest[0] + ` ($` + greatest[1] + `)`);
 
