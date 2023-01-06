@@ -95,5 +95,11 @@ var sortedData = finances.sort((a, b) => b[1] - a[1]);
 var smallest = sortedData[sortedData.length - 1];
 var greatest = sortedData[0];
 
-
+console.log("Financial Analysis \n");
+console.log('----------------------------');
+console.log("Total Months: ", totalMonths);
+console.log("Total: " + `$` + total);
+console.log("Average Change: " + `$` + average.toFixed(2));
+console.log("Greatest Decrease in Profits: " + smallest[0] + ` ($` + smallest[1] + `)`);
+console.log("Greatest Increase in Profits: " + greatest[0] + ` ($` + greatest[1] + `)`);
 
